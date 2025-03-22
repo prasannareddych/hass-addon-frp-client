@@ -1,0 +1,24 @@
+serverAddr = "your_server_addr"
+serverPort = 7000
+auth.method = "token"
+auth.token = "your_secret_token"
+
+log.to = "/share/frpc.log"
+# trace, debug, info, warn, error
+log.level = "trace"
+log.maxDays = 3
+
+
+webServer.addr = "0.0.0.0"
+webServer.port = 7500
+webServer.user = "admin"
+webServer.password = "your_another_secret_token"
+
+[[proxies]]
+name = "homeassistant"
+type = "tcp"
+transport.useEncryption = true
+transport.useCompression = true
+localPort = 8123
+localIP = "127.0.0.1"
+remotePort = 8123
